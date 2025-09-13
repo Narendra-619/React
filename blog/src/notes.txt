@@ -1,0 +1,4 @@
+{/* <div className='head'> 
+   <Product phone={phone} />
+    <Product phone={phone1} /> 
+  </div> */}
