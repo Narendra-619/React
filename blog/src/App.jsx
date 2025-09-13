@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -8,6 +8,8 @@ import Greeting from './Greeting.jsx'
 import  Car from './Car.jsx' 
 import Roll from './Roll.jsx'
 import BlogPost from './BlogPost.jsx'
+import Clicks from './Clicks.jsx'
+import { useState } from 'react'
 const person={
   name:"Narendra",
   age:21 
@@ -59,15 +61,39 @@ const product=[
     {id:2,author:"Kumar",title:"JavaScript",description:"This is a book about JavaScript"},
     {id:3,author:"Kura",title:"HTML",description:"This is a book about HTML and CSS"}
       ]
+ 
+ 
+ const [count,setCount]=useState(0);
+ const increment=()=>
+ {
+ setCount((count)=>count+1)
+  console.log(count);
+ }
+const decrement=()=>
+ {
+ setCount((count)=>count-1)
+  console.log(count);
+ }
+const reset=()=>
+ {
+ setCount((count)=>count=0)
+  console.log(count);
+ }
+
+
  return(
 
 
 
   <div className='app'>
-
-
-  {books.map((book,index)=>(<BlogPost key={index} post={book}/>))}
-
+  <h2>{count}</h2>
+<button onClick={()=>increment(count)}>Increment</button>
+<button onClick={()=>decrement(count)}>Decrement</button>
+<button onClick={()=>reset(count)}>Reset</button> 
+<br/>
+<br/>
+<Clicks/> 
+    
    </div>
  )
   
