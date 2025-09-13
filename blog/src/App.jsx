@@ -7,6 +7,7 @@ import Product from './Product.jsx'
 import Greeting from './Greeting.jsx'
 import  Car from './Car.jsx' 
 import Roll from './Roll.jsx'
+import BlogPost from './BlogPost.jsx'
 const person={
   name:"Narendra",
   age:21 
@@ -32,19 +33,42 @@ const phone1=
 const profile=
 {
   name:"Narendra",
-  age:21,
+  age:20,
   roll:"23VV1A0526",
   branch:"CSE",
   blood:"O+",
   img:"./profile.jpg"
 }
+const product=[
+  {
+    ProdName:"Iphone 17",
+  price:120000,
+  avail:true
+  },
+  {
+    ProdName:"Samsung S23",
+  price:100000,
+  avail:false
+  },
+  {
+    ProdName:"Oneplus 11",
+  price:70000,
+  avail:true
+  }]
+  const books=[{ id:1,author:"Narendra",title:"React",description:"This is a book about React"},
+    {id:2,author:"Kumar",title:"JavaScript",description:"This is a book about JavaScript"},
+    {id:3,author:"Kura",title:"HTML",description:"This is a book about HTML and CSS"}
+      ]
  return(
 
 
 
   <div className='app'>
-    <Roll prof={profile} />
-  </div>
+
+
+  {books.map((book,index)=>(<BlogPost key={index} post={book}/>))}
+
+   </div>
  )
   
   
